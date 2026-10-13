@@ -1,0 +1,61 @@
+# Validation and evidence
+
+## Evidence hierarchy
+
+1. Independent analytical examples establish selected equations and optimal decisions.
+2. Randomized conservation tests cover storage, spill, diversions, losses and delayed water.
+3. Solver residuals and independent physical replay establish feasibility of each exported schedule.
+4. Held-out synthetic experiments compare decision policies under explicitly stated information timing.
+5. A measured USGS sample verifies data transport, unit conversion, sorting and quality preservation.
+6. Operational validity requires independent plant observations and calibration. It has not been established.
+
+The public discharge sample is measured river flow, potentially affected by upstream regulation. It is
+not a measured inflow series for the invented demonstration plants. Its estimated-value flags remain
+visible even when USGS marks the records Approved. Public-domain USGS data retain provider attribution.
+
+## Analytical checks
+
+- Empty reservoir with no inflow: zero generation and explicit unmet environmental release.
+- 10 m³/s inflow, 2 m³/s discharge over 24 h: storage increases by 691,200 m³.
+- One-MW conversion factor, 3600 m³ initially stored, hourly prices 10/100 EUR/MWh:
+  with zero terminal target, the optimizer generates 1 MWh in the second hour for EUR 100.
+- Two equally likely future prices 100/0, current price 50, one MWh available:
+  shared first-stage decisions have expected value EUR 50; separate clairvoyant solves would yield EUR 75.
+- Congested link at 10 MW between marginal costs 20 and 80: zone prices separate at 20/80 EUR/MWh.
+- Energy plus reserve share plant capacity; an empty hydro reservoir cannot provide energy-backed reserve.
+
+Tests perturb future evaluation inflows and prices to verify an unchanged first rolling action.
+The perfect-foresight benchmark is compared on the same terminal value/penalty basis and must dominate
+the feasible policies. No guaranteed benefit from stochastic scheduling is claimed.
+
+## Reproduce
+
+```bash
+python -m pytest -q --cov=hydrocascade --cov-fail-under=85
+python -m hydrocascade demo --output runs/demo --seed 42 --trials 8 --steps 48 --horizon 12
+```
+
+Generated results include exact inputs, per-plant schedules, policy trials, summaries, market outputs,
+adequacy trials, sensitivity estimates and an environment/hash manifest. Seeds and methods are part of
+the manifest. Wall time, timestamps and platform are intentionally not bitwise invariant; floating-point
+solutions and alternative LP optima may vary across solvers. Use tolerances and compare objectives and
+feasibility rather than assuming identical release schedules for degenerate problems.
+
+## Score a real cascade
+
+Supply independently measured columns `timestamp`, `plant_id`, `storage_m3`, `power_mw`, `turbine_m3s`.
+Predictions must use the same interval convention and storage point (start/end). Measurements need
+consistent UTC timestamps, turbine versus total river-discharge definitions, and documented units.
+Keep separate calibration and evaluation periods, including wet, dry and seasonal-transition conditions.
+
+```bash
+hydro-cascade validate --predictions runs/schedule/schedule.csv \
+  --observations your-observations.csv --output runs/validation.csv
+```
+
+The scorer returns coverage, MAE, RMSE, bias and Nash-Sutcliffe efficiency by plant and metric. No
+matches and zero-variance observations are explicitly undefined; missing data are not converted to zero.
+Record parameter revisions and compare to simple baselines. Revenue accuracy needs actual forecast
+information and comparable terminal states, not historical prices supplied with perfect foresight.
+
+No real-plant error percentage, revenue uplift or BID3 parity is asserted by this repository.

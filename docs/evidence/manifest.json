@@ -1,0 +1,102 @@
+{
+  "created_utc": "2026-10-13T15:20:36.347591+00:00",
+  "version": "0.2.0",
+  "git_revision": null,
+  "python": "3.11.3 (tags/v3.11.3:f3909b8, Apr  4 2023, 23:49:59) [MSC v.1934 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "dependencies": {
+    "numpy": "1.26.4",
+    "pandas": "2.2.1",
+    "scipy": "1.13.0",
+    "matplotlib": "3.8.3"
+  },
+  "assumptions": {
+    "dataset": "synthetic",
+    "seed": 42,
+    "dt_seconds": 3600,
+    "trials": 8,
+    "steps": 48,
+    "horizon": 12,
+    "terminal_rule": "fixed illustrative carryover values for evaluation",
+    "current_interval_inflow_and_price": "observed before decisions",
+    "seasonal_water_values": "not estimated",
+    "training_seed": 142,
+    "held_out_seed_start": 1142
+  },
+  "source_sha256": {
+    "cascade.json": "86b0eb84a75be26cce646c159c4c26b772e264e9a6390b7069b79a749c440331",
+    "inputs.csv": "3532b08feb6395dd43426d8ee17b2c97ed9f40cf8f11ed7f78b2ba989d27845e"
+  },
+  "code_sha256": {
+    "hydrocascade/__init__.py": "6a81b40b059f743cbd6226bb5b461a7beaadf2f5ddd8466631c867ec96537d6a",
+    "hydrocascade/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+    "hydrocascade/cli.py": "5b1ae84799546a36d835c3bb0811c412644325c3403b9a5ed10b5db120f47ccd",
+    "hydrocascade/data.py": "b9c4d1d52c9f7f46971126e9ca64143ea2b78c6a7e219aed1d8703fa79c7ccee",
+    "hydrocascade/experiments.py": "74ecb894e093be00ca94ddaca892e8cbd8672665e2d31e27b2b5187c12a289e4",
+    "hydrocascade/lp.py": "df730e7a0d72ebfc5a2ddaf4d82c1c945cf5ddced564e10fa855e7efe4d3512b",
+    "hydrocascade/market.py": "779675f8031f06d585fa502d6f23408f6169db090ec2f7707c34b1f713017673",
+    "hydrocascade/model.py": "12013241e38b01f48a86666d0a25ba2dbdea5024b6867cea5db25f9e4fb4588d",
+    "hydrocascade/reporting.py": "b5f2f6719d4b0bc3f2bead6593d170bf381fff1278bfcd6d6dd625ee919a6cb2",
+    "hydrocascade/scheduling.py": "e25e211acc69bb9e50beaa091009f0c37611170103c102261e46efdd5526f0f2",
+    "hydrocascade/simulation.py": "7ac9a514f373ddd4277daefbe0f8929063b98b778934948ffc0175c459e4e037",
+    "hydrocascade/validation.py": "7305ad8b850a5600ad80c4e80ec5fe895a76102d565b4cb5bd0944b34b284aac"
+  },
+  "artifact_sha256": {
+    "adequacy_trials.csv": "72791442fdb5aeea758efc697c743fe777eff288490170cceeaedc31b14fd50a",
+    "baseline.csv": "ae00fd800801681620dc8a8b06f787fc73d3953af4472ab18b8b3b4e734a1167",
+    "baseline_water_audit.csv": "904ea1c1ef3128dfd18a41a22bce0fb12900c2dc9a4b297c92020280c2dd6978",
+    "cascade.json": "86b0eb84a75be26cce646c159c4c26b772e264e9a6390b7069b79a749c440331",
+    "dispatch.svg": "da98df0edc9012d7d862cb21c48bddc73cafe424ab69b7fa0aa7d2236cd9efd6",
+    "inputs.csv": "3532b08feb6395dd43426d8ee17b2c97ed9f40cf8f11ed7f78b2ba989d27845e",
+    "market_flows.csv": "9f6eea1d73439d94872c4229c2a54d1f6baf4d8c3955f8c371012c8017749f0b",
+    "market_hydro.csv": "1dfb16d0b6d455b80601df7eca3e1775cd56e0188ce1348924947c4ea999b80e",
+    "market_thermal.csv": "c6319931b0dc73ce0a23a5418322dd7528533c95cf9f0536a98e622c7ceb5d81",
+    "market_zones.csv": "8ed9db5ff145bc15ddb7111f48f8c095c13f087489b15b598451a06b13d10d46",
+    "optimized.csv": "3ce0fa8ec0dbf7419f4bb13332ec89e27aa3e0c4842358042802bb73efa29529",
+    "policies.svg": "8d704e0e985e49ccab61fc3d973eca60d361197848f03129a0fb7c4a89d5ded5",
+    "policy_summary.csv": "1088f4e1ff2081e1a532fe3b8fc5835b314b6f8d27a20a97fb1b65213336f6d5",
+    "policy_trials.csv": "4198cde8c558bc69f36dc44f9653fb0929a00f1a9e1c6038feade23edea02fb7",
+    "results.json": "8646395b940f3d9220dbf00a3f3218bef1720b344f4388fdedec7316ec5d38a8",
+    "water_values.csv": "d73896d104eb3697d1b545556d43115131471c2673a8e8eb0ca8d33ee023d246"
+  },
+  "solver_audits": {
+    "hydro": {
+      "status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "solver": "SciPy / HiGHS LP",
+      "objective": -203211.08348563252,
+      "solve_seconds": 0.032253199999104254,
+      "variables": 720,
+      "equality_constraints": 144,
+      "inequality_constraints": 144,
+      "max_equality_residual": 1.4210854715202004e-13,
+      "max_inequality_violation": 0.0,
+      "max_bound_violation": 0.0,
+      "max_water_residual_m3": 4.656612873077393e-10,
+      "information": "perfect foresight",
+      "terminal_min_m3": null,
+      "terminal_value_eur_m3": null,
+      "environmental_shortfall_m3": 0.0,
+      "full_objective_eur": 203211.08348563252
+    },
+    "market": {
+      "status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "solver": "SciPy / HiGHS LP",
+      "objective": 308736.7307857263,
+      "solve_seconds": 0.020872499997494742,
+      "variables": 1393,
+      "equality_constraints": 240,
+      "inequality_constraints": 624,
+      "max_equality_residual": 1.9895196601282805e-13,
+      "max_inequality_violation": 0.0,
+      "max_bound_violation": 0.0,
+      "max_water_residual_m3": 2.3283064365386963e-10,
+      "unserved_energy_mwh": 0.0,
+      "scarcity_intervals": 0,
+      "network": "lossless zonal transport",
+      "prices": "LP marginal prices, no uplift",
+      "reserve": "local upward holding with storage safeguard; no activation simulation"
+    }
+  }
+}

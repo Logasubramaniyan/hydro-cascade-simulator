@@ -1,0 +1,5 @@
+* text=auto eol=lf
+# Byte-for-byte scientific evidence must retain its recorded SHA-256 across operating systems.
+docs/evidence/** -text
+data/observed/** -text
+docs/assets/*.svg -text

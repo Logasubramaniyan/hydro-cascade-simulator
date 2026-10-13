@@ -1,0 +1,13 @@
+{
+  "tests": 60,
+  "failures": 0,
+  "errors": 0,
+  "statement_coverage_percent": 94.88229273285567,
+  "covered_statements": 927,
+  "total_statements": 977,
+  "local_platform": "Windows / Python 3.11",
+  "build": "wheel and sdist built; wheel installed and analytic solve verified from outside source tree",
+  "lint": "ruff check and format pass",
+  "public_data": "15 USGS daily observations retrieved with raw payload, units and quality flags; real-plant calibration not claimed",
+  "github_ci": "Configured in .github/workflows/ci.yml; remote results are tracked on the pull request"
+}

@@ -1,0 +1,6 @@
+include LICENSE README.md constraints-tested.txt
+recursive-include docs *.md *.svg *.csv *.json
+recursive-include examples *.py *.json *.csv
+recursive-include data/observed *.md *.csv *.json
+recursive-include tools *.py
+recursive-include src *.py
