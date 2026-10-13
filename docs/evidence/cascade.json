@@ -1,0 +1,60 @@
+{
+  "plants": [
+    {
+      "id": "upper",
+      "name": "Upper reservoir",
+      "storage_capacity_m3": 2000000,
+      "initial_storage_m3": 1000000,
+      "max_flow_m3s": 65,
+      "head_m": 90,
+      "efficiency": 0.9,
+      "min_storage_m3": 0.0,
+      "min_release_m3s": 3,
+      "ramp_m3s_per_step": null,
+      "loss_m3s": 0.0,
+      "zone": "north"
+    },
+    {
+      "id": "middle",
+      "name": "Middle reservoir",
+      "storage_capacity_m3": 800000,
+      "initial_storage_m3": 400000,
+      "max_flow_m3s": 75,
+      "head_m": 55,
+      "efficiency": 0.9,
+      "min_storage_m3": 0.0,
+      "min_release_m3s": 4,
+      "ramp_m3s_per_step": null,
+      "loss_m3s": 0.0,
+      "zone": "north"
+    },
+    {
+      "id": "lower",
+      "name": "Lower reservoir",
+      "storage_capacity_m3": 500000,
+      "initial_storage_m3": 250000,
+      "max_flow_m3s": 85,
+      "head_m": 35,
+      "efficiency": 0.9,
+      "min_storage_m3": 0.0,
+      "min_release_m3s": 5,
+      "ramp_m3s_per_step": null,
+      "loss_m3s": 0.0,
+      "zone": "south"
+    }
+  ],
+  "links": [
+    {
+      "source": "upper",
+      "target": "middle",
+      "delay_steps": 1,
+      "fraction": 1.0
+    },
+    {
+      "source": "middle",
+      "target": "lower",
+      "delay_steps": 1,
+      "fraction": 1.0
+    }
+  ]
+}

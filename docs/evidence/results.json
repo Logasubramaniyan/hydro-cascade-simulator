@@ -1,0 +1,88 @@
+{
+  "dataset": "synthetic",
+  "seed": 42,
+  "steps": 48,
+  "evaluation_trials": 8,
+  "forecast_horizon": 12,
+  "optimizer": {
+    "status": 0,
+    "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "solver": "SciPy / HiGHS LP",
+    "objective": -203211.08348563252,
+    "solve_seconds": 0.028420700000424404,
+    "variables": 720,
+    "equality_constraints": 144,
+    "inequality_constraints": 144,
+    "max_equality_residual": 1.4210854715202004e-13,
+    "max_inequality_violation": 0.0,
+    "max_bound_violation": 0.0,
+    "max_water_residual_m3": 4.656612873077393e-10,
+    "information": "perfect foresight",
+    "terminal_min_m3": null,
+    "terminal_value_eur_m3": null,
+    "environmental_shortfall_m3": 0.0,
+    "full_objective_eur": 203211.08348563252
+  },
+  "market": {
+    "status": 0,
+    "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "solver": "SciPy / HiGHS LP",
+    "objective": 308736.7307857263,
+    "solve_seconds": 0.023002200003247708,
+    "variables": 1393,
+    "equality_constraints": 240,
+    "inequality_constraints": 624,
+    "max_equality_residual": 1.9895196601282805e-13,
+    "max_inequality_violation": 0.0,
+    "max_bound_violation": 0.0,
+    "max_water_residual_m3": 2.3283064365386963e-10,
+    "unserved_energy_mwh": 0.0,
+    "scarcity_intervals": 0,
+    "network": "lossless zonal transport",
+    "prices": "LP marginal prices, no uplift",
+    "reserve": "local upward holding with storage safeguard; no activation simulation"
+  },
+  "builds_mw": {
+    "north_gas": 0.0
+  },
+  "policy_summary": [
+    {
+      "policy": "inflow_following",
+      "trials": 8,
+      "mean_objective_eur": 190179.51040526407,
+      "std_objective_eur": 17733.730179763334,
+      "mean_revenue_eur": 152160.59413845587,
+      "max_water_residual_m3": 6.984919309616089e-10
+    },
+    {
+      "policy": "perfect_foresight",
+      "trials": 8,
+      "mean_objective_eur": 244063.04515422983,
+      "std_objective_eur": 21546.441320202717,
+      "mean_revenue_eur": 223699.86425602777,
+      "max_water_residual_m3": 1.3969838619232178e-09
+    },
+    {
+      "policy": "rolling_deterministic",
+      "trials": 8,
+      "mean_objective_eur": 239630.0103933724,
+      "std_objective_eur": 23447.880448310934,
+      "mean_revenue_eur": 219657.4318131515,
+      "max_water_residual_m3": 9.313225746154785e-10
+    },
+    {
+      "policy": "rolling_stochastic",
+      "trials": 8,
+      "mean_objective_eur": 239568.06126488253,
+      "std_objective_eur": 23498.51059295697,
+      "mean_revenue_eur": 220229.55885357226,
+      "max_water_residual_m3": 9.313225746154785e-10
+    }
+  ],
+  "adequacy": {
+    "trials": 20,
+    "mean_unserved_energy_mwh": 127.7668711593075,
+    "mean_loss_of_load_hours": 3.15,
+    "interpretation": "Independent synthetic interval outages; not calibrated annual LOLE"
+  }
+}

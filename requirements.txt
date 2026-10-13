@@ -1,5 +1,2 @@
-flake8
-pytest
-matplotlib
-pandas
-requests
+# Install the packaged application; development tools are in the dev extra.
+-e .

@@ -1,0 +1,13 @@
+{
+  "provider": "USGS",
+  "endpoint": "https://api.waterdata.usgs.gov/ogcapi/v1/collections/daily/items",
+  "station": "USGS-06090800",
+  "start": "2023-01-01",
+  "end": "2023-01-15",
+  "retrieved_utc": "2026-10-13T14:22:47.418403+00:00",
+  "raw_sha256": "102b7319753fd921c36bf52b70f535e4b644ad4f3e93a9806a37edc85ed8abe8",
+  "rows": 15,
+  "output_unit": "m3/s",
+  "source": "measured river discharge; may be regulated; not naturalized reservoir inflow",
+  "quality": "Approval and estimation flags retained; neither implies plant validation"
+}

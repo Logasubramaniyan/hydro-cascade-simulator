@@ -1,28 +1,42 @@
-import json
-from typing import List
-import pandas as pd
+"""Legacy single-plant adapter backed by the shared physical engine (SI units)."""
 
-RHO = 1000
-G = 9.81
-MIN_FLOW = 20  # m³/s, environmental
+from hydrocascade.model import Cascade, Plant
+from hydrocascade.simulation import CascadeState, step
+
 
 class ReservoirPlant:
     def __init__(self, cfg):
-        self.name = cfg['name']
-        self.head = cfg['head']
-        self.eff = cfg['efficiency']
-        self.max_flow = cfg['max_flow']
-        self.capacity = cfg['storage_capacity']
-        self.storage = cfg['initial_storage']
-        self.history = {'release': [], 'storage': [], 'power_mw': []}
+        plant = Plant(
+            id="plant",
+            name=cfg["name"],
+            head_m=cfg["head"],
+            efficiency=cfg["efficiency"],
+            max_flow_m3s=cfg["max_flow"],
+            storage_capacity_m3=cfg["storage_capacity"],
+            initial_storage_m3=cfg["initial_storage"],
+            min_release_m3s=cfg.get("min_flow", 20),
+        )
+        self.cascade = Cascade((plant,))
+        self.state = CascadeState.initial(self.cascade)
+        self.name, self.capacity = plant.name, plant.storage_capacity_m3
+        self.history = {"release": [], "storage": [], "power_mw": [], "shortfall_m3s": []}
 
-    def step(self, inflow):
-        self.storage = min(self.storage + inflow, self.capacity)
-        avail = self.storage
-        release = max(min(avail, self.max_flow), MIN_FLOW)
-        self.storage -= release
-        power = self.eff * RHO * G * release * self.head / 1e6
-        self.history['release'].append(release)
-        self.history['storage'].append(self.storage)
-        self.history['power_mw'].append(power)
+    @property
+    def storage(self):
+        return float(self.state.storage_m3[0])
+
+    def step(self, inflow, dt_seconds=86400):
+        plant = self.cascade.plants[0]
+        self.state, frame, _ = step(
+            self.cascade, self.state, [inflow], [min(inflow, plant.max_flow_m3s)], dt_seconds
+        )
+        row = frame.iloc[0]
+        release = float(row.turbine_m3s + row.bypass_m3s + row.spill_m3s)
+        for key, value in (
+            ("release", release),
+            ("storage", self.storage),
+            ("power_mw", row.power_mw),
+            ("shortfall_m3s", row.environmental_shortfall_m3s),
+        ):
+            self.history[key].append(float(value))
         return release
