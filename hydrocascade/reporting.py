@@ -131,11 +131,11 @@ def write_manifest(output, assumptions, source_paths=(), audits=None):
         revision = None
     sources = {str(Path(p).name): file_hash(p) for p in source_paths}
     code = {
-        str(p.relative_to(Path(__file__).parent.parent)): file_hash(p)
+        p.relative_to(Path(__file__).parent.parent).as_posix(): file_hash(p)
         for p in sorted(Path(__file__).parent.glob("*.py"))
     }
     artifact_hashes = {
-        str(p.relative_to(directory)): file_hash(p)
+        p.relative_to(directory).as_posix(): file_hash(p)
         for p in directory.rglob("*")
         if p.is_file() and p.name != "manifest.json"
     }

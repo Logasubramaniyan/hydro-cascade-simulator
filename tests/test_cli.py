@@ -15,6 +15,8 @@ def test_offline_demo_and_manifest(tmp_path):
     assert findings["optimizer"]["max_water_residual_m3"] < 1e-6
     manifest = json.loads((output / "manifest.json").read_text())
     assert manifest["code_sha256"]
+    assert all("\\" not in path for path in manifest["code_sha256"])
+    assert all("\\" not in path for path in manifest["artifact_sha256"])
     assert "dispatch.svg" in manifest["artifact_sha256"]
     main(
         [

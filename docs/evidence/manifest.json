@@ -1,5 +1,5 @@
 {
-  "created_utc": "2026-10-13T14:30:03.883237+00:00",
+  "created_utc": "2026-10-13T15:20:36.347591+00:00",
   "version": "0.2.0",
   "git_revision": null,
   "python": "3.11.3 (tags/v3.11.3:f3909b8, Apr  4 2023, 23:49:59) [MSC v.1934 64 bit (AMD64)]",
@@ -28,18 +28,18 @@
     "inputs.csv": "3532b08feb6395dd43426d8ee17b2c97ed9f40cf8f11ed7f78b2ba989d27845e"
   },
   "code_sha256": {
-    "hydrocascade\\__init__.py": "6a81b40b059f743cbd6226bb5b461a7beaadf2f5ddd8466631c867ec96537d6a",
-    "hydrocascade\\__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
-    "hydrocascade\\cli.py": "5b1ae84799546a36d835c3bb0811c412644325c3403b9a5ed10b5db120f47ccd",
-    "hydrocascade\\data.py": "b9c4d1d52c9f7f46971126e9ca64143ea2b78c6a7e219aed1d8703fa79c7ccee",
-    "hydrocascade\\experiments.py": "74ecb894e093be00ca94ddaca892e8cbd8672665e2d31e27b2b5187c12a289e4",
-    "hydrocascade\\lp.py": "df730e7a0d72ebfc5a2ddaf4d82c1c945cf5ddced564e10fa855e7efe4d3512b",
-    "hydrocascade\\market.py": "779675f8031f06d585fa502d6f23408f6169db090ec2f7707c34b1f713017673",
-    "hydrocascade\\model.py": "12013241e38b01f48a86666d0a25ba2dbdea5024b6867cea5db25f9e4fb4588d",
-    "hydrocascade\\reporting.py": "177382d4a40a89e8dbaedfeaa4bcf43bafb4acd1b2a826e0f6befcb48fd86d9d",
-    "hydrocascade\\scheduling.py": "e25e211acc69bb9e50beaa091009f0c37611170103c102261e46efdd5526f0f2",
-    "hydrocascade\\simulation.py": "7ac9a514f373ddd4277daefbe0f8929063b98b778934948ffc0175c459e4e037",
-    "hydrocascade\\validation.py": "7305ad8b850a5600ad80c4e80ec5fe895a76102d565b4cb5bd0944b34b284aac"
+    "hydrocascade/__init__.py": "6a81b40b059f743cbd6226bb5b461a7beaadf2f5ddd8466631c867ec96537d6a",
+    "hydrocascade/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+    "hydrocascade/cli.py": "5b1ae84799546a36d835c3bb0811c412644325c3403b9a5ed10b5db120f47ccd",
+    "hydrocascade/data.py": "b9c4d1d52c9f7f46971126e9ca64143ea2b78c6a7e219aed1d8703fa79c7ccee",
+    "hydrocascade/experiments.py": "74ecb894e093be00ca94ddaca892e8cbd8672665e2d31e27b2b5187c12a289e4",
+    "hydrocascade/lp.py": "df730e7a0d72ebfc5a2ddaf4d82c1c945cf5ddced564e10fa855e7efe4d3512b",
+    "hydrocascade/market.py": "779675f8031f06d585fa502d6f23408f6169db090ec2f7707c34b1f713017673",
+    "hydrocascade/model.py": "12013241e38b01f48a86666d0a25ba2dbdea5024b6867cea5db25f9e4fb4588d",
+    "hydrocascade/reporting.py": "b5f2f6719d4b0bc3f2bead6593d170bf381fff1278bfcd6d6dd625ee919a6cb2",
+    "hydrocascade/scheduling.py": "e25e211acc69bb9e50beaa091009f0c37611170103c102261e46efdd5526f0f2",
+    "hydrocascade/simulation.py": "7ac9a514f373ddd4277daefbe0f8929063b98b778934948ffc0175c459e4e037",
+    "hydrocascade/validation.py": "7305ad8b850a5600ad80c4e80ec5fe895a76102d565b4cb5bd0944b34b284aac"
   },
   "artifact_sha256": {
     "adequacy_trials.csv": "72791442fdb5aeea758efc697c743fe777eff288490170cceeaedc31b14fd50a",
@@ -56,7 +56,7 @@
     "policies.svg": "8d704e0e985e49ccab61fc3d973eca60d361197848f03129a0fb7c4a89d5ded5",
     "policy_summary.csv": "1088f4e1ff2081e1a532fe3b8fc5835b314b6f8d27a20a97fb1b65213336f6d5",
     "policy_trials.csv": "4198cde8c558bc69f36dc44f9653fb0929a00f1a9e1c6038feade23edea02fb7",
-    "results.json": "478e518f953be4e72c2859b360af0d3bce6ec2e2c93aba7dcec6f7a033ead742",
+    "results.json": "8646395b940f3d9220dbf00a3f3218bef1720b344f4388fdedec7316ec5d38a8",
     "water_values.csv": "d73896d104eb3697d1b545556d43115131471c2673a8e8eb0ca8d33ee023d246"
   },
   "solver_audits": {
@@ -65,7 +65,7 @@
       "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
       "solver": "SciPy / HiGHS LP",
       "objective": -203211.08348563252,
-      "solve_seconds": 0.028420700000424404,
+      "solve_seconds": 0.032253199999104254,
       "variables": 720,
       "equality_constraints": 144,
       "inequality_constraints": 144,
@@ -84,7 +84,7 @@
       "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
       "solver": "SciPy / HiGHS LP",
       "objective": 308736.7307857263,
-      "solve_seconds": 0.023002200003247708,
+      "solve_seconds": 0.020872499997494742,
       "variables": 1393,
       "equality_constraints": 240,
       "inequality_constraints": 624,
