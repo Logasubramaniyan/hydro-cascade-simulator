@@ -6,9 +6,12 @@ __pycache__/
 htmlcov/
 *.egg-info/
 .venv/
+.venv-*/
 build/
 dist/
 runs/
 reports/
 .wheel-check/
 .env
+*.sqlite
+.coverage.*

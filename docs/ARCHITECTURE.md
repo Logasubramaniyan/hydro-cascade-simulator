@@ -26,6 +26,9 @@ flowchart LR
 | `validation.py` | Independent-observation alignment, coverage and error metrics |
 | `reporting.py` | Figures, dependency/input/code/output hashes |
 | `cli.py` | Reproducible end-to-end workflows |
+| `powergama/network.py` | Optional DC network schema, mappings and validation |
+| `powergama/backend.py` | Water-block extension, native PowerGAMA solve and independent audits |
+| `powergama/study.py` | Six synthetic congestion cases, sensitivity and hashed evidence |
 
 ## Why a linear fixed-head baseline?
 
@@ -55,6 +58,14 @@ global storage-plus-transit conservation with independent logic. Analytical test
 remain necessary: agreement between two implementations alone does not prove realism.
 
 ## Reproducibility boundaries
+
+The optional grid backend inserts the existing `water_block` constraints into PowerGAMA's Pyomo
+extension interface. Native hydro storage and pumping are disabled, so there is one physical water
+state. PowerGAMA owns electrical balance, meshed DC flows and thermal/renewable dispatch. Hydro
+generation is tied to turbine discharge using the fixed-head conversion coefficient. Independent
+replay owns the physical validation; separate nodal/DC/objective audits check the native solution.
+Full-window optimization is supported; rolling windows and resume are rejected until reservoir and
+transit-state transfer are implemented. See [POWERGAMA.md](POWERGAMA.md).
 
 The CLI exports seeds, assumptions, exact input files, software versions and SHA-256 hashes. CI
 exercises tested versions across operating systems plus a latest-dependency job. The dependency

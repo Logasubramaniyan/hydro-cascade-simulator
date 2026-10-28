@@ -1,0 +1,17 @@
+# Tested direct dependencies for the optional Python 3.11+ backend, separate from core constraints.
+# PowerGAMA itself is pinned to an exact VCS commit by the powergama extra in pyproject.toml.
+# This is a direct-dependency constraints snapshot, not a fully hashed dependency lock.
+numpy==2.4.6
+scipy==1.17.1
+pandas==2.3.3
+matplotlib==3.11.2
+requests==2.34.2
+pyomo==6.10.1
+highspy==1.15.1
+pyarrow==25.0.1
+geopandas==1.2.0
+networkx==3.6.1
+pytest==8.4.2
+pytest-cov==6.3.0
+ruff==0.17.3
+build==1.6.1

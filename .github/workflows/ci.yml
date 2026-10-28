@@ -26,7 +26,7 @@ jobs:
           python -m ruff check .
           python -m ruff format --check .
       - name: Test physics, scheduling, markets, adapters and CLI
-        run: python -m pytest -q --cov=hydrocascade --cov-fail-under=85 --cov-report=xml --junitxml=reports/junit.xml
+        run: python -m pytest -q -m "not powergama" --cov=hydrocascade --cov-config=.coveragerc-core --cov-fail-under=85 --cov-report=xml --junitxml=reports/junit.xml
       - name: Build wheel and source distribution
         run: python -m build
       - name: Offline demonstration
@@ -50,4 +50,34 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m pip install -e ".[dev]"
-      - run: python -m pytest -q
+      - run: python -m pytest -q -m "not powergama"
+  powergama:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    env:
+      MPLCONFIGDIR: ${{ runner.temp }}/hydro-mpl
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: constraints-powergama.txt
+      - name: Install pinned optional backend in a separate environment
+        run: python -m pip install -c constraints-powergama.txt -e ".[dev,powergama]"
+      - name: Real PowerGAMA integration tests and coverage
+        run: python -m pytest tests/test_powergama.py tests/test_grid_inputs.py -q --cov=hydrocascade/powergama --cov-config=.coveragerc-powergama --cov-fail-under=85 --cov-report=xml:reports/grid-coverage.xml --junitxml=reports/grid-junit.xml
+      - name: Reproduce small hydro-grid study
+        run: python -m hydrocascade.powergama.study --output runs/grid-ci --steps 12 --seed 42
+      - name: Verify committed grid-study evidence
+        run: python tools/check_grid_evidence.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: powergama-evidence-${{ matrix.os }}
+          path: |
+            reports/
+            runs/grid-ci/
