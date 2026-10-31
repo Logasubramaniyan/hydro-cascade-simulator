@@ -29,6 +29,10 @@ flowchart LR
 | `powergama/network.py` | Optional DC network schema, mappings and validation |
 | `powergama/backend.py` | Water-block extension, native PowerGAMA solve and independent audits |
 | `powergama/study.py` | Six synthetic congestion cases, sensitivity and hashed evidence |
+| `operations/model.py`, `optimizer.py` | Time-dependent limits, observable-history offers/recourse, mean/CVaR and security paths |
+| `operations/market_data.py`, `forecast.py` | Licence/provenance-aware quarter-hour prices, issue-time filtering, held-out forecast scores |
+| `operations/state.py`, `io.py` | Versioned company cases, physical execution checkpoints and JSON/CSV audit exports |
+| `operations/study.py`, `grid_check.py` | Reproducible offer/stress experiment and optional fixed-schedule native grid assessment |
 
 ## Why a linear fixed-head baseline?
 
@@ -58,6 +62,13 @@ global storage-plus-transit conservation with independent logic. Analytical test
 remain necessary: agreement between two implementations alone does not prove realism.
 
 ## Reproducibility boundaries
+
+The operations extension also reuses `water_block`, while its independent operating audit measures
+total release, availability, storage curves and firm delivery. Forecast probabilities drive the
+financial objective; zero-probability security paths add physical constraints. Node histories are
+derived from revealed inputs, so a scenario name cannot create earlier information. The native
+PowerGAMA assessment is downstream of that offer optimization, with its role explicitly recorded.
+See [OPERATIONS.md](OPERATIONS.md) for information timing, settlement and scope.
 
 The optional grid backend inserts the existing `water_block` constraints into PowerGAMA's Pyomo
 extension interface. Native hydro storage and pumping are disabled, so there is one physical water
