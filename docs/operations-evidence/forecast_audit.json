@@ -1,0 +1,11 @@
+{
+  "model": "weekly UTC lag plus complete historical daily residual paths",
+  "issued_at_utc": "2026-10-26T10:00:00+00:00",
+  "latest_observed_interval_end_utc": "2026-10-26T10:00:00+00:00",
+  "observed_prefix_sha256": "8d8eeea9537f3c9dd17eaf4b0e9dda77b9597aa06e760fcd558e78d98c4ac1b2",
+  "observed_intervals": 3496,
+  "residual_days": 20,
+  "nominal_interval_coverage": 0.8,
+  "information": "only intervals ending before issue; no future prices, no fitted site inflow model",
+  "coverage_claim": "empirical intervals; no distribution-free or operational guarantee"
+}

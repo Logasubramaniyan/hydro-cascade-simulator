@@ -40,3 +40,12 @@ Run coverage suites sequentially, or set distinct `COVERAGE_FILE` paths. When ch
 reproduce the full 48-hour study in a fresh directory, export its evidence with
 `tools/export_grid_evidence.py`, update the case-study claims, and verify the source/artifact hashes.
 Keep native SQLite files in run directories or CI artifacts. See [the integration notes](docs/POWERGAMA.md).
+
+The operations tests run in the core suite; `tests/test_operations_grid.py` requires the optional
+backend. For changed operations equations, retain the independent physical/settlement/tail audits
+and provide a meaningful known-answer or information-timing regression. Do not count a security
+scenario as a forecast probability or market income from an undeliverable offer as achieved revenue.
+Use openly licensed source data for public evidence, preserve exact raw/CSV provenance, and reproduce
+the full 96-quarter-hour study from stable package sources before updating `docs/operations-evidence/`.
+Copy only non-SQLite artifacts with the existing export helper, then run
+`python tools/check_operations_evidence.py`. See [OPERATIONS.md](docs/OPERATIONS.md).

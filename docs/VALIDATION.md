@@ -31,7 +31,7 @@ the feasible policies. No guaranteed benefit from stochastic scheduling is claim
 ## Reproduce
 
 ```bash
-python -m pytest -q --cov=hydrocascade --cov-fail-under=85
+python -m pytest -q -m "not powergama" --cov=hydrocascade --cov-config=.coveragerc-core
 python -m hydrocascade demo --output runs/demo --seed 42 --trials 8 --steps 48 --horizon 12
 ```
 
@@ -59,3 +59,24 @@ Record parameter revisions and compare to simple baselines. Revenue accuracy nee
 information and comparable terminal states, not historical prices supplied with perfect foresight.
 
 No real-plant error percentage, revenue uplift or BID3 parity is asserted by this repository.
+
+## Reserve offers and observed-price evidence
+
+The [operations study](OPERATIONS_CASE_STUDY.md) adds an openly licensed observed SE4 auction-price
+archive with raw/CSV hashes, complete quarter-hour validation and a 100-interval DST-day test.
+Its forecaster only reads interval ends before issue. A future-price perturbation test verifies
+that later observations cannot alter the earlier forecast. Rolling-origin MAE, interval coverage,
+width and empirical CRPS expose the baseline's failures; a forecast-health hold uses only score
+days completed before that issue.
+
+Known answers establish signed reserve/activation settlement, fractional weighted CVaR, water-limited
+sustained activation, delayed downstream reserve energy and hard total-release ramping through
+bypass/spill. Additional tests cover maintenance, flood/storage curves, zero-probability security
+paths, histories that cannot leak future activation, timestamped checkpoint handoff and complete
+JSON/CLI workflows. An optional test replays an offer trajectory into real pinned PowerGAMA.
+
+The operations evidence verifier checks source/output hashes, market licence/provenance, timing,
+scenario cashflows, physical tolerances, financial dominance and the documented headline values.
+Its stress assessments are represented-path feasibility tests; they do not constitute TSO
+qualification or prove online control feasibility on unseen activation sequences. Actual plant
+and activation observations remain necessary for a company pilot.

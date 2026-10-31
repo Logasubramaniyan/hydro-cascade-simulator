@@ -20,6 +20,7 @@ powergama = ["powergama @ git+https://github.com/powergama/powergama.git@dd681ab
 [project.scripts]
 hydro-cascade = "hydrocascade.cli:main"
 hydro-grid = "hydrocascade.powergama.study:main"
+hydro-operations = "hydrocascade.operations.study:main"
 
 [tool.setuptools.packages.find]
 include = ["hydrocascade*"]

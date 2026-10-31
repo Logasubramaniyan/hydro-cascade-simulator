@@ -1,0 +1,16 @@
+policy,stress,max_delivery_error_mw,total_delivery_error_mwh,passes,max_water_residual_m3,interpretation
+energy_only,sustained_up,4.000020581429453e-08,4.000033015927329e-08,True,9.276845958083868e-10,optimistic trajectory-existence test; not an out-of-sample executable policy
+energy_only,sustained_down,4.000020581429453e-08,4.000033015927329e-08,True,9.276845958083868e-10,optimistic trajectory-existence test; not an out-of-sample executable policy
+energy_only,reversal,4.000020581429453e-08,4.000033015927329e-08,True,9.276845958083868e-10,optimistic trajectory-existence test; not an out-of-sample executable policy
+mean_profit,sustained_up,20.0,158.35408557947233,False,7.275957614183426e-11,optimistic trajectory-existence test; not an out-of-sample executable policy
+mean_profit,sustained_down,4.0000170287157744e-08,1.0000141825727837e-08,True,2.9103830456733704e-11,optimistic trajectory-existence test; not an out-of-sample executable policy
+mean_profit,reversal,13.346892228673738,20.594955368833993,False,2.9103830456733704e-11,optimistic trajectory-existence test; not an out-of-sample executable policy
+tail_aware,sustained_up,18.315792443914972,161.68072336224623,False,2.9103830456733704e-11,optimistic trajectory-existence test; not an out-of-sample executable policy
+tail_aware,sustained_down,3.999999975690116e-08,1.0000025252310252e-08,True,2.9103830456733704e-11,optimistic trajectory-existence test; not an out-of-sample executable policy
+tail_aware,reversal,14.326608975227082,18.985318816352553,False,1.4551915228366852e-11,optimistic trajectory-existence test; not an out-of-sample executable policy
+stress_constrained,sustained_up,3.999999975690116e-08,1.0000136940746529e-08,True,2.6193447411060333e-10,optimistic trajectory-existence test; not an out-of-sample executable policy
+stress_constrained,sustained_down,4.000030884299122e-08,1.0000156480671762e-08,True,5.820766091346741e-11,optimistic trajectory-existence test; not an out-of-sample executable policy
+stress_constrained,reversal,4.000030529027754e-08,1.0000158034983997e-08,True,5.820766091346741e-11,optimistic trajectory-existence test; not an out-of-sample executable policy
+headroom_only,sustained_up,22.0,151.4111649006772,False,2.9103830456733704e-11,optimistic trajectory-existence test; not an out-of-sample executable policy
+headroom_only,sustained_down,4.000000330961484e-08,1.0000013705990796e-08,True,1.3096723705530167e-10,optimistic trajectory-existence test; not an out-of-sample executable policy
+headroom_only,reversal,12.0,23.22594271471145,False,2.9103830456733704e-11,optimistic trajectory-existence test; not an out-of-sample executable policy

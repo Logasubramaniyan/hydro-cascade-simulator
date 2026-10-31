@@ -19,6 +19,13 @@
 
 ## Next research milestones
 
+The [reserve offer workbench](OPERATIONS.md) now implements quarter-hour observed-price ingestion,
+issue-time forecast filtering/backtests, mean/CVaR offer quantities, zero-probability activation
+security paths, hard river limits, outage/connection derating, independent delivery tests and
+timestamped state handoff. Its [case study](OPERATIONS_CASE_STUDY.md) exposes failed stresses and
+forecast undercoverage. These are engineering-assessment capabilities; the operational milestones
+below still require company data, applicable market rules and field validation.
+
 | Milestone | Required evidence before claiming completion |
 |---|---|
 | Real-cascade calibration | Independent plant data; held-out storage/generation/discharge errors; wet/dry years |
@@ -27,11 +34,11 @@
 | Seasonal water-value model | Multi-year inflows and demand/prices; correlated scenarios; out-of-sample drought behavior |
 | SDDP / larger problems | Valid state formulation, convergence/bounds, policy sampling and published benchmark |
 | Operational bidding | Gate-closure timing, forecast archive, market rules, imbalance/activation evaluation |
-| Real reserve products | Response-time constraints, downstream activation effects, qualification and measured delivery |
+| Real reserve products | Product-specific response/lot/block constraints, qualification and measured delivery; represented cascade activation paths now implemented |
 | Market forecasting | Weather-consistent demand/renewables, fuel/outages, observed-price and flow backcast |
 | Annual investment/adequacy | Full-year/multi-year chronology, annualized costs, outage duration/correlation, uncertainty intervals |
 | Calibrated network/security modelling | Validated real topology/ratings, AC feasibility and contingency constraints; illustrative DC benchmarks already implemented |
-| Rolling hydro-grid decisions | Explicit reservoir and transit-state transfer across solver windows; nonanticipative forecasts and held-out backtests |
+| Rolling hydro-grid decisions | Native PowerGAMA window handoff and forecast backtests; the separate JSON operations planner now preserves reservoir/transit/release checkpoints |
 
 These require data and sustained validation work. A UI or another solver package does not supply that
 evidence. No release currently claims parity with BID3's market, seasonal hydro, adequacy or financing

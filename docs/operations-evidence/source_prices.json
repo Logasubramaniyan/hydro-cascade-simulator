@@ -1,0 +1,16 @@
+{
+  "provider": "Fraunhofer ISE Energy-Charts; original price source stated in response licence",
+  "endpoint": "https://api.energy-charts.info/price",
+  "zone": "SE4",
+  "start_utc": "2026-09-20T00:00:00+00:00",
+  "end_exclusive_utc": "2026-10-29T00:00:00+00:00",
+  "retrieved_at_utc": "2026-10-31T12:55:02.312239+00:00",
+  "licence": "CC BY 4.0 (creativecommons.org/licenses/by/4.0) from Bundesnetzagentur | SMARD.de",
+  "attribution": "Energy-Charts.info / Bundesnetzagentur | SMARD.de",
+  "source_kind": "observed day-ahead auction prices; not forecasts or balancing prices",
+  "timestamp_semantics": "UTC interval start; 900-second duration; end exclusive",
+  "raw_sha256": "9b92bb1babe81f15125456ddaaf2db415b7c0f7e07db45cf3e67e61c88fe6f51",
+  "csv_sha256": "f5b3006c928042ef4e62e393663e1ed7cc8a13d8fd5744e88bc109d42eec8c14",
+  "intervals": 3744,
+  "negative_price_intervals": 10
+}
