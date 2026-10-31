@@ -29,6 +29,35 @@ The implemented models are research/portfolio tools. The examples are synthetic 
 labelled measured. Real-plant calibration, operational bidding and parity with commercial software have
 not been established. Read the [model specification](docs/MODEL.md) before interpreting results.
 
+## Hydropower flexibility under grid congestion
+
+An optional [PowerGAMA](https://github.com/powergama/powergama) backend connects the physical cascade
+to a meshed DC power network. Compare an inflow-following schedule, an independently price-optimized
+schedule assessed against network limits, and joint water/electricity optimization. The cascade owns
+the water balance; mapped PowerGAMA generators have no second energy-storage model.
+
+![Synthetic hydro-grid congestion study](docs/grid-evidence/grid_study.svg)
+
+The [48-hour case study](docs/GRID_CASE_STUDY.md) includes six scenarios, corridor reinforcement
+sensitivity, signed nodal prices, line loading, renewable curtailment and independent physical audits.
+Inputs are explicitly synthetic; the earlier public USGS sample remains a separate measured-data example.
+
+Use a separate Python 3.11-3.12 environment for the optional backend, whose dependencies differ from
+the lightweight core snapshot. Activate that environment before running:
+
+```bash
+python -m pip install -c constraints-powergama.txt -e ".[dev,powergama]"
+hydro-grid --output runs/grid-study --steps 48 --seed 42
+python -m pytest tests/test_powergama.py tests/test_grid_inputs.py -q \
+  --cov=hydrocascade/powergama --cov-config=.coveragerc-powergama
+python tools/check_grid_evidence.py
+```
+
+Read the [integration specification](docs/POWERGAMA.md) for the exact upstream commit, units,
+terminal accounting, Python API and limitations. The exported CSV prices preserve signed duals;
+the pinned upstream SQLite price extractor applies an absolute value. Attribution is in
+[third-party notices](THIRD_PARTY_NOTICES.md).
+
 ## Run the complete offline case study
 
 Requires Python 3.10-3.12. No API key or commercial solver is needed for the demonstration.
@@ -41,7 +70,7 @@ python -m venv .venv
 # Windows PowerShell: .\.venv\Scripts\Activate.ps1
 python -m pip install -c constraints-tested.txt -e ".[dev]"
 python -m hydrocascade demo --output runs/demo --seed 42 --trials 8 --steps 48 --horizon 12
-python -m pytest -q --cov=hydrocascade --cov-fail-under=85
+python -m pytest -q -m "not powergama" --cov=hydrocascade --cov-config=.coveragerc-core
 ```
 
 Open `runs/demo/dispatch.svg` and `runs/demo/policies.svg`. Inspect `results.json`, individual schedules,

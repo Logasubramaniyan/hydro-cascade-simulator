@@ -9,6 +9,14 @@
   thermal capacity additions and independent synthetic outage sampling.
 - Modern public-data ingestion, observation scorer, reproducible evidence and cross-platform CI.
 
+## Implemented optional hydro-grid extension
+
+- Pinned PowerGAMA/Pyomo DC network with the existing physical cascade as its only water model.
+- Fixed physical schedules assessed electrically, plus one full-window joint optimization.
+- Six synthetic cases, corridor sensitivity, signed-price finite differences, independent meshed-flow
+  benchmarks, reproducible source/output hashes and Linux/Windows integration CI.
+- Detailed scope and evidence in [POWERGAMA.md](POWERGAMA.md) and [GRID_CASE_STUDY.md](GRID_CASE_STUDY.md).
+
 ## Next research milestones
 
 | Milestone | Required evidence before claiming completion |
@@ -22,7 +30,8 @@
 | Real reserve products | Response-time constraints, downstream activation effects, qualification and measured delivery |
 | Market forecasting | Weather-consistent demand/renewables, fuel/outages, observed-price and flow backcast |
 | Annual investment/adequacy | Full-year/multi-year chronology, annualized costs, outage duration/correlation, uncertainty intervals |
-| Nodal/security modelling | DC power-flow/PTDF inputs, contingency constraints and independent network benchmark |
+| Calibrated network/security modelling | Validated real topology/ratings, AC feasibility and contingency constraints; illustrative DC benchmarks already implemented |
+| Rolling hydro-grid decisions | Explicit reservoir and transit-state transfer across solver windows; nonanticipative forecasts and held-out backtests |
 
 These require data and sustained validation work. A UI or another solver package does not supply that
 evidence. No release currently claims parity with BID3's market, seasonal hydro, adequacy or financing

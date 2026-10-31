@@ -15,9 +15,11 @@ dependencies = ["numpy>=1.24,<3", "scipy>=1.11,<2", "pandas>=2.0,<3", "matplotli
 
 [project.optional-dependencies]
 dev = ["pytest>=8,<9", "pytest-cov>=5,<7", "ruff>=0.8,<1", "build>=1,<2"]
+powergama = ["powergama @ git+https://github.com/powergama/powergama.git@dd681aba3ca32ce00bd9c38a3acbd624eb6dd6bb"]
 
 [project.scripts]
 hydro-cascade = "hydrocascade.cli:main"
+hydro-grid = "hydrocascade.powergama.study:main"
 
 [tool.setuptools.packages.find]
 include = ["hydrocascade*"]
@@ -25,6 +27,7 @@ include = ["hydrocascade*"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["."]
+markers = ["powergama: optional pinned PowerGAMA integration tests"]
 
 [tool.ruff]
 line-length = 110

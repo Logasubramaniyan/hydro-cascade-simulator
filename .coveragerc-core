@@ -1,0 +1,9 @@
+[run]
+source = hydrocascade
+omit = */hydrocascade/powergama/*
+
+[report]
+# Reporting also discovers unexecuted source files; keep the optional backend in its own suite.
+omit = */hydrocascade/powergama/*
+show_missing = True
+fail_under = 85

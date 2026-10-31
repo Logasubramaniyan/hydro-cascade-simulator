@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased
+
+Add an optional PowerGAMA backend pinned to a reviewed source commit. Couple the existing cubic-metre
+cascade constraints to meshed DC dispatch with native hydro storage disabled. Support fixed-schedule
+electrical assessments and full-window joint optimization, independent water/electrical/objective
+audits, signed nodal-price exports and native SQLite outputs. Add a reproducible six-case congestion
+study, corridor sensitivity, source/output hashes, analytical integration tests, Linux/Windows CI,
+and technical documentation with explicit synthetic-data and operational-use boundaries.
+
 ## 0.2.0
 
 Rebuild the demonstration as an auditable modelling package. Fix dimensional water accounting,
