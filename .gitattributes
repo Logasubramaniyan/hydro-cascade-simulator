@@ -6,3 +6,6 @@ docs/assets/*.svg -text
 docs/grid-evidence/** -text whitespace=cr-at-eol
 # Matplotlib writes trailing path-command spaces; preserve the hashed generated SVG.
 docs/grid-evidence/*.svg -whitespace
+data/market/** -text whitespace=cr-at-eol
+docs/operations-evidence/** -text whitespace=cr-at-eol
+docs/operations-evidence/*.svg -whitespace

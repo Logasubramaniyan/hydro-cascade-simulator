@@ -29,6 +29,40 @@ The implemented models are research/portfolio tools. The examples are synthetic 
 labelled measured. Real-plant calibration, operational bidding and parity with commercial software have
 not been established. Read the [model specification](docs/MODEL.md) before interpreting results.
 
+## Company-focused reserve offer assessment
+
+Can a proposed reserve offer survive activation without exhausting water or violating river limits?
+The new workbench compares energy-only, expected-value, downside-aware and stress-constrained offers
+at 15-minute resolution. It exposes failed delivery, forecast undercoverage and grid absorption limits
+as separate findings. This is a practical starting point for a hydro planning or model-validation pilot.
+
+![Reserve offers, delivery stresses and observed-price forecast backtests](docs/operations-evidence/operations_study.svg)
+
+- **Activation-aware offers:** shared pre-auction quantities, observed-history dispatch and mean/CVaR risk.
+- **Physical operating envelope:** hard environmental release limits, total-release ramps, reservoir
+  curves, maintenance derating, connection limits and terminal recovery targets.
+- **Forecast evidence:** observed SE4 quarter-hour prices, issue-time filtering, held-out errors,
+  empirical coverage/CRPS and unchanged-quantity cashflow repricing at held-out auction prices.
+- **Security assessment:** zero-probability stress constraints, separate sustained/reversal tests and
+  optional native PowerGAMA checks without silently curtailing the original hydro schedule.
+- **Company inputs:** versioned JSON cases, CSV/audit exports and timestamped execution checkpoints
+  preserving delayed water and previous total river release.
+
+```bash
+# After the core development installation described below:
+hydro-operations study --output runs/operations --steps 96
+hydro-operations plan --config examples/operations_case.json --output runs/company-case
+python tools/check_operations_evidence.py
+```
+
+The [industry research](docs/INDUSTRY_RESEARCH.md) connects recent publications and company/market
+needs to implemented features. Read the [case study](docs/OPERATIONS_CASE_STUDY.md),
+[model/API specification](docs/OPERATIONS.md) and [company pilot guide](docs/COMPANY_PILOT.md).
+Day-ahead prices are observed and openly licensed; assets, inflows, activations and balancing/capacity
+prices in the demonstration are synthetic. The published report remains `research_only`, with an
+explicit forecast-health hold. Executable bids, TSO qualification and real-plant calibration require
+additional company evidence.
+
 ## Hydropower flexibility under grid congestion
 
 An optional [PowerGAMA](https://github.com/powergama/powergama) backend connects the physical cascade

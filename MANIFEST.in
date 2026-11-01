@@ -3,5 +3,6 @@ include .coveragerc-core .coveragerc-powergama
 recursive-include docs *.md *.svg *.csv *.json
 recursive-include examples *.py *.json *.csv
 recursive-include data/observed *.md *.csv *.json
+recursive-include data/market *.md *.csv *.json
 recursive-include tools *.py
 recursive-include src *.py

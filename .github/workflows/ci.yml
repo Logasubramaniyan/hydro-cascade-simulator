@@ -33,6 +33,8 @@ jobs:
         run: python -m hydrocascade demo --output runs/ci --trials 2 --steps 24 --horizon 6
       - name: Verify committed evidence and headline claims
         run: python tools/check_evidence.py
+      - name: Verify operational study and public market data
+        run: python tools/check_operations_evidence.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -69,7 +71,7 @@ jobs:
       - name: Real PowerGAMA integration tests and coverage
         env:
           MPLCONFIGDIR: ${{ runner.temp }}/hydro-mpl
-        run: python -m pytest tests/test_powergama.py tests/test_grid_inputs.py -q --cov=hydrocascade/powergama --cov-config=.coveragerc-powergama --cov-fail-under=85 --cov-report=xml:reports/grid-coverage.xml --junitxml=reports/grid-junit.xml
+        run: python -m pytest tests/test_powergama.py tests/test_grid_inputs.py tests/test_operations_grid.py -q --cov=hydrocascade/powergama --cov-config=.coveragerc-powergama --cov-fail-under=85 --cov-report=xml:reports/grid-coverage.xml --junitxml=reports/grid-junit.xml
       - name: Reproduce small hydro-grid study
         env:
           MPLCONFIGDIR: ${{ runner.temp }}/hydro-mpl

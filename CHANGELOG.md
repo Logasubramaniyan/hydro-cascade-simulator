@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+Add the quarter-hour reserve offer workbench: mean/CVaR quantities, observed-history dispatch,
+zero-probability security paths, hard time-varying river/storage constraints, maintenance and
+connection derating, signed activation settlement, minimum-delivery-error stress assessments,
+timestamped state checkpoints and a company JSON planner. Add openly licensed observed SE4 prices,
+pre-issue empirical forecasts, rolling-origin scores/health and held-out energy-cashflow repricing.
+Connect selected activation schedules to optional native grid checks. Include recent industry
+research, a company pilot guide, analytical/workflow tests and hashed full-day study evidence.
+
 Add an optional PowerGAMA backend pinned to a reviewed source commit. Couple the existing cubic-metre
 cascade constraints to meshed DC dispatch with native hydro storage disabled. Support fixed-schedule
 electrical assessments and full-window joint optimization, independent water/electrical/objective

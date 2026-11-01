@@ -1,0 +1,56 @@
+{
+  "status": "research_only",
+  "forecast_health": {
+    "status": "hold",
+    "reason": "recent empirical interval undercoverage",
+    "observed_days": 3,
+    "observed_coverage": 0.4895833333333333,
+    "minimum_coverage": 0.7,
+    "mean_mae_eur_mwh": 103.13920138888888,
+    "latest_scored_day": "2026-10-25T00:00:00+00:00",
+    "interpretation": "review trigger, not a statistical guarantee or permission to trade"
+  },
+  "reserve_stress_failures": [
+    {
+      "policy": "mean_profit",
+      "stress": "sustained_up",
+      "total_delivery_error_mwh": 158.35408557947233
+    },
+    {
+      "policy": "mean_profit",
+      "stress": "reversal",
+      "total_delivery_error_mwh": 20.594955368833993
+    },
+    {
+      "policy": "tail_aware",
+      "stress": "sustained_up",
+      "total_delivery_error_mwh": 161.68072336224623
+    },
+    {
+      "policy": "tail_aware",
+      "stress": "reversal",
+      "total_delivery_error_mwh": 18.985318816352553
+    },
+    {
+      "policy": "headroom_only",
+      "stress": "sustained_up",
+      "total_delivery_error_mwh": 151.4111649006772
+    },
+    {
+      "policy": "headroom_only",
+      "stress": "reversal",
+      "total_delivery_error_mwh": 23.22594271471145
+    }
+  ],
+  "grid_checked": true,
+  "grid_absorption_failures": [
+    "connection_derated"
+  ],
+  "deployment_gaps": [
+    "synthetic plant/inflow/activation data",
+    "empirical price baseline requires broader validation",
+    "TSO prequalification and executable bid rules not implemented",
+    "no unit commitment, variable head or SCADA control"
+  ],
+  "purpose": "engineering assessment, data/model acceptance and operator review; no order submission"
+}

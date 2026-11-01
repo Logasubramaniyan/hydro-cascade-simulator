@@ -1,0 +1,8 @@
+{
+  "exported": {
+    "p0_h0_idle": "dispatch_000.csv",
+    "p2_h1_up_burst": "dispatch_016.csv"
+  },
+  "computed_scenarios": 18,
+  "all_scenarios_exported": false
+}

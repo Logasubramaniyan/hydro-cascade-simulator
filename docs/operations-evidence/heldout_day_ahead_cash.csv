@@ -1,0 +1,5 @@
+policy,forecast_expected_day_ahead_cash_eur,heldout_day_ahead_cash_eur,cash_difference_eur,interpretation
+energy_only,77667.22928751743,27906.427304837358,-49760.801982680074,"fixed pre-auction quantities, observed held-out DA prices; not total realized profit"
+mean_profit,77483.35831359315,27763.807395053293,-49719.55091853986,"fixed pre-auction quantities, observed held-out DA prices; not total realized profit"
+tail_aware,76332.90094227431,28436.843123740655,-47896.057818533656,"fixed pre-auction quantities, observed held-out DA prices; not total realized profit"
+stress_constrained,76820.52152323867,28537.252681405356,-48283.26884183331,"fixed pre-auction quantities, observed held-out DA prices; not total realized profit"
