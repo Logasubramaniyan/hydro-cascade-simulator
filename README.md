@@ -179,5 +179,4 @@ recorded benchmark evidence, an explicit specification and a [scoped development
 - [AFRY BID3 published functionality](https://bid3.afry.com/publicpages/key-functionality.html)
 - [Svenska kraftnät-hosted hydropower/BID3 thesis](https://www.svk.se/siteassets/5.jobba-har/dokument-exjobb/implementation-of-hydropower-modeling-for-electricity-market-simulations-using-bid3.pdf)
 
-These sources inform the formulation and comparison. This project contains no BID3 code or calibrated
-AFRY dataset. Code is [MIT licensed](LICENSE); USGS observations retain source attribution.
+These sources inform the formulation and comparison. Code is [MIT licensed](LICENSE); USGS observations retain source attribution.
