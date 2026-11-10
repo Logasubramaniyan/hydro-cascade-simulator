@@ -1,0 +1,24 @@
+{
+  "state": {
+    "storage_m3": [
+      45000.0,
+      25000.0
+    ],
+    "queues_m3": [
+      [
+        1800,
+        1800
+      ]
+    ],
+    "last_turbine_m3s": [
+      0.0,
+      0.0
+    ]
+  },
+  "unit_state": null,
+  "initial_release_m3s": [
+    0.0,
+    0.0
+  ],
+  "handoff_sha256": null
+}

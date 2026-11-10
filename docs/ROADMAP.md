@@ -19,6 +19,12 @@
 
 ## Next research milestones
 
+The [asset-aware pilot](PILOT_MODEL.md) now adds deterministic unit commitment, interpolated variable
+head/efficiency with independent hydraulic/peak-export checks, bounded efficiency fitting with a
+chronological holdout, strict DST/time/product screening and metered settlement/observation interfaces.
+Its [benchmark](ASSET_CASE_STUDY.md) does not calibrate a real asset. The stochastic reserve and native
+grid models continue to use their own documented physical approximations.
+
 The [reserve offer workbench](OPERATIONS.md) now implements quarter-hour observed-price ingestion,
 issue-time forecast filtering/backtests, mean/CVaR offer quantities, zero-probability activation
 security paths, hard river limits, outage/connection derating, independent delivery tests and
@@ -29,11 +35,11 @@ below still require company data, applicable market rules and field validation.
 | Milestone | Required evidence before claiming completion |
 |---|---|
 | Real-cascade calibration | Independent plant data; held-out storage/generation/discharge errors; wet/dry years |
-| Variable head and efficiency | Reservoir level-volume and tailwater curves; measured conversion performance |
-| Unit commitment | Minimum turbine load, starts, operating zones, ramp data; MILP known-answer cases |
+| Variable head and efficiency | Deterministic piecewise model and independent nonlinear replay implemented; company curves, dynamic tailwater and held-out conversion performance still required |
+| Unit commitment | Deterministic minimum load, starts/run/rest/ramp/outage MILP and known-answer tests implemented; prohibited zones, measured constraints and stochastic/grid coupling remain |
 | Seasonal water-value model | Multi-year inflows and demand/prices; correlated scenarios; out-of-sample drought behavior |
 | SDDP / larger problems | Valid state formulation, convergence/bounds, policy sampling and published benchmark |
-| Operational bidding | Gate-closure timing, forecast archive, market rules, imbalance/activation evaluation |
+| Operational bidding | Configurable gate/lot/block/DST checks and metered settlement interface implemented; actual product rules, forecast archive, clearing/acceptance and submission remain |
 | Real reserve products | Product-specific response/lot/block constraints, qualification and measured delivery; represented cascade activation paths now implemented |
 | Market forecasting | Weather-consistent demand/renewables, fuel/outages, observed-price and flow backcast |
 | Annual investment/adequacy | Full-year/multi-year chronology, annualized costs, outage duration/correlation, uncertainty intervals |

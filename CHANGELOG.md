@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+Add an asset-aware company pilot: triangulated storage/flow generation surfaces, changing forebay
+levels, unit efficiency/loss curves and audited mixed-integer commitment with minimum operating flow,
+run/rest durations, startup/shutdown costs, flow ramps and maintenance. Independently replay water,
+unit decisions, hydraulic approximation and instantaneous export peaks. Add absolute-time and
+fingerprinted physical/unit handoff, explicit projected-state labels, local DST delivery calendars,
+configurable quantity/block/gate checks, strict timestamped metering/settlement evaluation, observation
+acceptance thresholds and chronological efficiency fitting. Include CLI cases, labelled evidence,
+technical specification, independent-review regressions and cross-platform CI. Existing reserve and
+grid formulations remain separate; real-asset validation and executable bidding are not claimed.
+
 Add the quarter-hour reserve offer workbench: mean/CVaR quantities, observed-history dispatch,
 zero-probability security paths, hard time-varying river/storage constraints, maintenance and
 connection derating, signed activation settlement, minimum-delivery-error stress assessments,

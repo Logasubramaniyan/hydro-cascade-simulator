@@ -1,0 +1,15 @@
+{
+  "data_kind": "synthetic benchmark except observed day-ahead prices; no company validation or achieved profit",
+  "steps": 32,
+  "dt_seconds": 900,
+  "price_source_sha256": "f5b3006c928042ef4e62e393663e1ed7cc8a13d8fd5744e88bc109d42eec8c14",
+  "modeled_revenue_eur": 392.2827750869236,
+  "modeled_objective_eur": 1419.6383453519918,
+  "hydraulic_review": "pass",
+  "max_power_approximation_error_mw": 0.020058093450161074,
+  "max_water_residual_m3": 1.4551915228366852e-11,
+  "net_evaluation_cash_eur": 387.6929611900081,
+  "fitted_efficiency_scale": 0.92,
+  "heldout_calibration_mae_mw": 0.053416492154655326,
+  "builder_sha256": "fdaa48af3de5f1992de576f4496aeae58eacb562e46ca81a9ab0042bbb63c40c"
+}

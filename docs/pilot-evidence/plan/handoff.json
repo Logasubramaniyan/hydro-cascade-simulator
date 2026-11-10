@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "state_basis": "projected_schedule",
+  "cascade_sha256": "38b2cea65af77b652bb122a8c5839797370be2ec99c1cc8518e0f49bf1968caf",
+  "asset_sha256": "4fb8521d67fda76375653b4f4da6762e50793e6952b3b6b7a59654ca5de8f596",
+  "dt_seconds": 900,
+  "as_of_utc": "2026-10-27T08:00:00+00:00",
+  "state": {
+    "storage_m3": [
+      63133.74679610989,
+      43695.489712656454
+    ],
+    "queues_m3": [
+      [
+        3600.0,
+        3599.9999999999873
+      ]
+    ],
+    "last_turbine_m3s": [
+      3.999999999999986,
+      2.8541889527729243
+    ]
+  },
+  "unit_state": {
+    "upper_main": {
+      "on": true,
+      "age_steps": 8,
+      "flow_m3s": 3.0
+    },
+    "upper_small": {
+      "on": true,
+      "age_steps": 12,
+      "flow_m3s": 0.9999999999999858
+    },
+    "lower_main": {
+      "on": true,
+      "age_steps": 8,
+      "flow_m3s": 2.8541889527729243
+    }
+  },
+  "last_release_m3s": [
+    3.999999999999986,
+    2.8541889527729243
+  ]
+}

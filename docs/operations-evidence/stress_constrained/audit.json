@@ -3,7 +3,7 @@
   "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
   "solver": "SciPy / HiGHS LP",
   "objective": -65265.47734798789,
-  "solve_seconds": 123.6589823999675,
+  "solve_seconds": 136.0245150999981,
   "variables": 62516,
   "equality_constraints": 19728,
   "inequality_constraints": 76242,

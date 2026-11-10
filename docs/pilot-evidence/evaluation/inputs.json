@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "case_type": "historical_evaluation",
+  "data_kind": "synthetic metering/settlement/observations; actual public day-ahead prices only",
+  "offers_csv": "accepted_quantities.csv",
+  "meter_csv": "synthetic_meter.csv",
+  "market_csv": "settlement_inputs.csv",
+  "predicted_csv": "predicted.csv",
+  "observed_csv": "synthetic_observed.csv",
+  "mae_thresholds": {
+    "storage_m3": 5,
+    "power_mw": 0.005
+  },
+  "minimum_coverage": 0.95
+}

@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "input_sha256": "9ae60fad534646920987aea68379d9397813a45f34f24b58a84e2cc2898fafce",
+  "input_files_sha256": {
+    "observations.csv": "5d417b5d3bf71f4831153ac13f37a8bfa46fd430ef6f86c3a7307cdcddda912c"
+  },
+  "code_sha256": {
+    "hydrocascade/__init__.py": "6a81b40b059f743cbd6226bb5b461a7beaadf2f5ddd8466631c867ec96537d6a",
+    "hydrocascade/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+    "hydrocascade/cli.py": "5b1ae84799546a36d835c3bb0811c412644325c3403b9a5ed10b5db120f47ccd",
+    "hydrocascade/data.py": "b9c4d1d52c9f7f46971126e9ca64143ea2b78c6a7e219aed1d8703fa79c7ccee",
+    "hydrocascade/experiments.py": "74ecb894e093be00ca94ddaca892e8cbd8672665e2d31e27b2b5187c12a289e4",
+    "hydrocascade/lp.py": "df730e7a0d72ebfc5a2ddaf4d82c1c945cf5ddced564e10fa855e7efe4d3512b",
+    "hydrocascade/market.py": "779675f8031f06d585fa502d6f23408f6169db090ec2f7707c34b1f713017673",
+    "hydrocascade/model.py": "12013241e38b01f48a86666d0a25ba2dbdea5024b6867cea5db25f9e4fb4588d",
+    "hydrocascade/operations/__init__.py": "21aa4c5e8b3eb7c8b158ad3e74b7068c700098493095a5e0330e5b35d9f10fc5",
+    "hydrocascade/operations/forecast.py": "2328da59ca2ef781d0a498c9e372d52b554844c6d4ee783fffa38ec8ea16e909",
+    "hydrocascade/operations/grid_check.py": "bbaed7ae5633f3251f6806778c4a74afdd6178b75f9cd87787f1f2a865108327",
+    "hydrocascade/operations/io.py": "c02eb13b1248633b2c1ce2674dfb4881fc612e37cbd3c5e317f805fef07fc82e",
+    "hydrocascade/operations/market_data.py": "894478ed3a22b3e1ac19671f6d03ff645b2e7335adea010cb3098dd2c190a0e3",
+    "hydrocascade/operations/model.py": "057ac4492a06841e2a7214adba36811318012b1f4af57ceb37a45db1f5549643",
+    "hydrocascade/operations/optimizer.py": "0aaef38c0c6896f3227c3def69918574e8c83a10cd5c9352d7005354c8106e44",
+    "hydrocascade/operations/state.py": "a925ba948ce3222c9b36bcf6648b882da082de546343de6ee5004dad7b9a1c11",
+    "hydrocascade/operations/study.py": "34155ad88ac7671a3186c099b5b21b164221310865d4c9087e6462d6fd073aed",
+    "hydrocascade/pilot/__init__.py": "16ffd82fd815089aa5256a98af3f423838cf06820f4b27bd3a525e009f95f87c",
+    "hydrocascade/pilot/assets.py": "977fa696a972e4bd42b8dd0b5d58197be3acc61326a82447c8dcd282c4780614",
+    "hydrocascade/pilot/calendar.py": "d0a081bad50394fea96e4ae11eb51ed072c3e661608216cb74fcbab564443860",
+    "hydrocascade/pilot/calibration.py": "3c789f8923cda8c906478e2ca0f288e9bbf1e04d3b7884bcfe98bcc42eb1b293",
+    "hydrocascade/pilot/dispatch.py": "96c364cc97d8b66c762dd15b035be1bdbf4f9162d7b91b4582b003bfaf49f726",
+    "hydrocascade/pilot/evaluation.py": "2a4ef54a03ef4bf2dffa19e1a6622ef1c7840dbcb87b991fd6c5f6919586e5ea",
+    "hydrocascade/pilot/solver.py": "06f3d1063113531c1b9657244b816bc1036911ee713d4aa6045aa3f0dc555e95",
+    "hydrocascade/pilot/workflow.py": "3736e17985a6283a74e4b41f4663465c85fb3e84e3c41d9fc73d24afac1160a5",
+    "hydrocascade/powergama/__init__.py": "aa1467b3e815b80f98db01fb71e79560a30749949597381e5f27ae7dff4b5d11",
+    "hydrocascade/powergama/backend.py": "99e3f9459e7a32fb8977ed17d17531cfdf11e85432b2912881b393c74bd793d4",
+    "hydrocascade/powergama/network.py": "4a403ca650ce183f22571c41c92a7f92f0cbba34815c4e190ba3d5a7193ca1a0",
+    "hydrocascade/powergama/study.py": "4fad43236b0bbb8098d848e4e1e8c87146edb4f22cb74e8d1d34fc9c2ff44b71",
+    "hydrocascade/reporting.py": "b5f2f6719d4b0bc3f2bead6593d170bf381fff1278bfcd6d6dd625ee919a6cb2",
+    "hydrocascade/scheduling.py": "e25e211acc69bb9e50beaa091009f0c37611170103c102261e46efdd5526f0f2",
+    "hydrocascade/simulation.py": "7ac9a514f373ddd4277daefbe0f8929063b98b778934948ffc0175c459e4e037",
+    "hydrocascade/validation.py": "7305ad8b850a5600ad80c4e80ec5fe895a76102d565b4cb5bd0944b34b284aac"
+  },
+  "artifact_sha256": {
+    "audit.json": "0eb46a87d9a6c4aaa4a50040a63b8578094ce8309f1fcd00f1e3e8a71c470ffd",
+    "decision_report.json": "56f4cb290a733531f23aa0d64416f5956f33c467a1da7ccd207bc4be5e454c86",
+    "fitted_unit.json": "eef4d9971e6676c8878dab1a5b06aeabdd4ddfe994e0c8e7197e32998465734e",
+    "inputs.json": "9ae60fad534646920987aea68379d9397813a45f34f24b58a84e2cc2898fafce",
+    "observations.csv": "5d417b5d3bf71f4831153ac13f37a8bfa46fd430ef6f86c3a7307cdcddda912c",
+    "original_config.json": "9ae60fad534646920987aea68379d9397813a45f34f24b58a84e2cc2898fafce",
+    "predictions.csv": "6f6ada37d73e5b62f1b814071a427f74bcff9d80f181ebf1a76cdec094b801a8"
+  },
+  "python": "3.11.3 (tags/v3.11.3:f3909b8, Apr  4 2023, 23:49:59) [MSC v.1934 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "dependencies": {
+    "numpy": "1.26.4",
+    "scipy": "1.13.0",
+    "pandas": "2.2.1"
+  }
+}

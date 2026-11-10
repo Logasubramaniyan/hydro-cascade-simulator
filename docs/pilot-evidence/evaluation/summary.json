@@ -1,0 +1,15 @@
+{
+  "day_ahead_eur": 392.28277508692355,
+  "capacity_eur": 0.0,
+  "activation_eur": 0.0,
+  "imbalance_eur": -2.6962919743243408,
+  "delivery_penalty_eur": 1.8935219225911009,
+  "net_cash_eur": 387.6929611900081,
+  "intervals": 32,
+  "dt_seconds": 900,
+  "absolute_delivery_error_mwh": 0.03787043845182202,
+  "short_energy_mwh": 0.02768287429105496,
+  "excess_energy_mwh": 0.010187564160767056,
+  "convention": "accepted quantities; requested activation; metered residual buy/sell imbalance; supplied absolute delivery penalty",
+  "scope": "cashflow evaluation under supplied rules; excludes unspecified charges and asset costs"
+}

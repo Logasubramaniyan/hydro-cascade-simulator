@@ -1,0 +1,18 @@
+{
+  "status": "research_only",
+  "data_kind": "synthetic metering/settlement/observations; actual public day-ahead prices only",
+  "observation_screen": {
+    "passes": false,
+    "failed_checks": [
+      "lower/storage_m3: MAE exceeds threshold",
+      "upper/storage_m3: MAE exceeds threshold",
+      "upper/power_mw: MAE exceeds threshold"
+    ],
+    "scope": "threshold screen on supplied independent observations; synthetic observations do not establish calibration"
+  },
+  "scope": "accepted quantities; requested activation; metered residual buy/sell imbalance; supplied absolute delivery penalty",
+  "reasons": [
+    "provided metering/settlement convention must be verified by the company",
+    "financial cashflows exclude unspecified costs; evaluation is not a profit-uplift claim"
+  ]
+}

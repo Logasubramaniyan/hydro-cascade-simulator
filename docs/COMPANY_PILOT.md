@@ -18,13 +18,21 @@ Use [the example case](../examples/operations_case.json) and [schema description
 Company scenarios can replace every synthetic plant, state, inflow, activation and price assumption.
 Keep company inputs in local run directories; public Git evidence should contain only authorised data.
 
+For turbine-level planning, use the separate [asset JSON case](../examples/asset_case.json) and
+[pilot specification](PILOT_MODEL.md). It adds deterministic unit commitment and changing head/efficiency,
+with independent approximation and instantaneous export checks. The `evaluate` command accepts actual
+metering and supplied settlement inputs; `calibrate` fits one efficiency multiplier on an earlier
+period and scores a later holdout. These interfaces do not establish that a company's geometry,
+prices, market rules or measurements have been validated. The stochastic reserve planner and native
+grid model do not inherit the new unit/variable-head formulation automatically.
+
 ## Data required and what each item resolves
 
 | Input | Decision or validation supported |
 |---|---|
 | Storage/level, turbine generation, discharge, bypass/spill and timestamps | Physical replay against independently observed state transitions |
 | Travel-time estimates and initial river/transit state | Arrival timing and downstream reserve-energy availability |
-| Head/efficiency curves, unit availability and minimum operating restrictions | Whether the current fixed-head continuous approximation is adequate |
+| Head/efficiency curves, unit availability and minimum operating restrictions | Validate the new deterministic piecewise unit model and its approximation tolerance, or establish whether a simpler fixed-head model is adequate |
 | Applicable reservoir/release permits and rate limits | Actual operating envelope; expert-approved interpretation of licence requirements |
 | Outage plan, connection constraints and validated network case | Planned derating, feasible export and external grid absorption |
 | Forecast issue archives with availability timestamps | Genuine historical information sets and leakage-free evaluation |
@@ -62,8 +70,14 @@ dispatch trajectories, independent audits and resolved input hashes. Timestamped
 resume it with the executed state. The optional native grid check fixes hydro exactly and reports
 dumped/unserved energy; it does not assume the water schedule survives a grid curtailment unchanged.
 
-Real SCADA/state-estimation adapters, asset-specific head/unit models, archived forecasts, full
+Real SCADA/state-estimation adapters, calibrated asset curves/unit restrictions, archived forecasts, full
 market settlement and TSO-compatible bid submission remain integration work. None is simulated by
 a success flag. The published decision report is `research_only`; its forecast-health, stress and
 grid findings explain why further evidence is needed. A company can use the harness to structure
 that evidence and identify which restriction limits flexibility before funding a larger implementation.
+
+The asset workflow's hydraulic curves/unit restrictions and limited settlement convention now have
+explicit interfaces; inserting an asset definition is not the same as validating it. Exported asset
+handoffs are labelled projected schedules. Replace them with reviewed measured execution state
+before an operational continuation, including transit water and unit run/rest ages. All acceptance
+thresholds need company approval against the actual decision and data quality.

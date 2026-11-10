@@ -1,0 +1,23 @@
+{
+  "status": "research_only",
+  "data_kind": "synthetic assets, inflows and maintenance; observed SE4 prices used as known-input benchmark, not forecasts",
+  "hydraulic_review": "pass",
+  "product_screen": {
+    "passes": false,
+    "violations": [
+      "quantity_increment"
+    ],
+    "product": "illustrative 0.1 MW energy increments; not actual exchange rules",
+    "issued_at_utc": "2026-10-26T10:00:00+00:00",
+    "gate_closure_utc": "2026-10-26T11:00:00+00:00",
+    "scope": "configured quantity/block/time screening; no response, telemetry or TSO qualification"
+  },
+  "start_utc": "2026-10-27T00:00:00+00:00",
+  "issued_at_utc": "2026-10-26T10:00:00+00:00",
+  "reasons": [
+    "real-asset calibration and forecast validation require independent company observations",
+    "deterministic approximation; no operational bid submission or TSO qualification",
+    "configured product/time screening failed"
+  ],
+  "purpose": "asset/planning/model-validation review; no dispatch or order execution"
+}

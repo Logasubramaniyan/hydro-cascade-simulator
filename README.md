@@ -29,6 +29,26 @@ The implemented models are research/portfolio tools. The examples are synthetic 
 labelled measured. Real-plant calibration, operational bidding and parity with commercial software have
 not been established. Read the [model specification](docs/MODEL.md) before interpreting results.
 
+## Asset-aware company pilot
+
+The new deterministic pilot workflow represents individual turbines, start/stop costs, minimum run
+and rest durations, flow ramps, maintenance, storage-dependent head and efficiency curves. An
+independent hydraulic replay exposes interpolation error and checks instantaneous connection peaks.
+Separate commands fit one efficiency factor on a training period and evaluate later observations,
+or reconstruct financial cashflows from accepted quantities, metering and supplied settlement rules.
+
+```bash
+hydro-pilot plan --config examples/asset_case.json --output runs/asset-plan
+hydro-pilot verify --directory runs/asset-plan
+python tools/check_pilot_evidence.py
+```
+
+Read the [asset case study](docs/ASSET_CASE_STUDY.md) and [model/input specification](docs/PILOT_MODEL.md).
+The demonstration has synthetic assets/metering and observed prices used as known inputs. It reports
+failed product and observation checks. The stochastic reserve LP and PowerGAMA model retain their
+separate documented assumptions; the new turbine model is not silently substituted into them.
+This is a read-only assessment workflow, with no automatic market orders or plant control.
+
 ## Company-focused reserve offer assessment
 
 Can a proposed reserve offer survive activation without exhausting water or violating river limits?
