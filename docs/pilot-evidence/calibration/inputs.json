@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "case_type": "unit_calibration",
+  "data_kind": "synthetic known-scale training and changed-efficiency held-out observations",
+  "unit": {
+    "id": "upper_main",
+    "plant_id": "upper",
+    "flow_m3s": [
+      1.0,
+      2.0,
+      3.0
+    ],
+    "efficiency": [
+      0.82,
+      0.91,
+      0.9
+    ],
+    "min_up_steps": 3,
+    "min_down_steps": 2,
+    "startup_cost_eur": 12,
+    "shutdown_cost_eur": 0,
+    "running_cost_eur_per_hour": 2,
+    "ramp_m3s_per_hour": 8,
+    "hydraulic_loss_m_per_m3s2": 0.02
+  },
+  "curve": {
+    "plant_id": "upper",
+    "storage_m3": [
+      5000.0,
+      45000.0,
+      90000.0
+    ],
+    "forebay_m": [
+      150.0,
+      155.0,
+      160.0
+    ],
+    "tailwater_m": 100
+  },
+  "observations_csv": "synthetic_unit_observations.csv",
+  "training_end_utc": "2026-10-20T04:00Z"
+}

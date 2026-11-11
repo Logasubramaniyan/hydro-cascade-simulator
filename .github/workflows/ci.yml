@@ -35,6 +35,11 @@ jobs:
         run: python tools/check_evidence.py
       - name: Verify operational study and public market data
         run: python tools/check_operations_evidence.py
+      - name: Run asset-aware planner and verify pilot evidence
+        run: |
+          hydro-pilot plan --config examples/asset_case.json --output runs/asset-ci
+          hydro-pilot verify --directory runs/asset-ci
+          python tools/check_pilot_evidence.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -43,6 +48,7 @@ jobs:
             reports/
             coverage.xml
             runs/ci/
+            runs/asset-ci/
             dist/
   latest-dependencies:
     runs-on: ubuntu-latest

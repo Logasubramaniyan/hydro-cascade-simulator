@@ -9,3 +9,5 @@ docs/grid-evidence/*.svg -whitespace
 data/market/** -text whitespace=cr-at-eol
 docs/operations-evidence/** -text whitespace=cr-at-eol
 docs/operations-evidence/*.svg -whitespace
+docs/pilot-evidence/** -text whitespace=cr-at-eol
+docs/pilot-evidence/*.svg -whitespace

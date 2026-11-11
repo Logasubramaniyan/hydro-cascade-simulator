@@ -1,0 +1,21 @@
+{
+  "id": "upper_main",
+  "plant_id": "upper",
+  "flow_m3s": [
+    1.0,
+    2.0,
+    3.0
+  ],
+  "efficiency": [
+    0.7544,
+    0.8372,
+    0.8280000000000001
+  ],
+  "min_up_steps": 3,
+  "min_down_steps": 2,
+  "startup_cost_eur": 12,
+  "shutdown_cost_eur": 0,
+  "running_cost_eur_per_hour": 2,
+  "ramp_m3s_per_hour": 8,
+  "hydraulic_loss_m_per_m3s2": 0.02
+}

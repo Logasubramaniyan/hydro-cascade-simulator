@@ -1,0 +1,10 @@
+{
+  "status": "research_only",
+  "data_kind": "synthetic known-scale training and changed-efficiency held-out observations",
+  "scope": "one efficiency multiplier; independently supplied geometry and unit metering; no full-asset calibration claim",
+  "automatic_parameter_promotion": false,
+  "reasons": [
+    "company must validate geometry, metering, held-out errors and efficiency identifiability",
+    "fitted multiplier alone does not calibrate an asset or demonstrate operational suitability"
+  ]
+}

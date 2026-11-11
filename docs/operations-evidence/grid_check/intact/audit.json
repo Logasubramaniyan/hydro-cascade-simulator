@@ -6,7 +6,7 @@
   "mode": "fixed_schedule_assessment",
   "intervals": 96,
   "dt_seconds": 900,
-  "solve_seconds": 2.2622713999589905,
+  "solve_seconds": 2.2776799000275787,
   "information": "one full perfect-foresight window",
   "network": "lossless DC OPF; 100 MVA base",
   "price_source": "signed raw balance duals; native SQLite absolute-valued prices not used",

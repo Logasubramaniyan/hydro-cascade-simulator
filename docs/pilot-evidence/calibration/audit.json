@@ -1,0 +1,15 @@
+{
+  "efficiency_scale": 0.92,
+  "unconstrained_scale": 0.92,
+  "at_parameter_bound": false,
+  "training_end_utc": "2026-10-20T04:00:00+00:00",
+  "latest_training_interval_end_utc": "2026-10-20T04:00:00+00:00",
+  "training_intervals": 16,
+  "heldout_intervals": 8,
+  "excluded_boundary_intervals": 0,
+  "training_mae_mw": 3.469446951953614e-17,
+  "heldout_mae_mw": 0.053416492154655326,
+  "heldout_bias_mw": 0.053416492154655326,
+  "heldout_rmse_mw": 0.05358380479524958,
+  "scope": "one efficiency multiplier; independently supplied geometry and unit metering; no full-asset calibration claim"
+}

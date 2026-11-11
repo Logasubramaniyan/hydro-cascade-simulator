@@ -80,3 +80,23 @@ scenario cashflows, physical tolerances, financial dominance and the documented 
 Its stress assessments are represented-path feasibility tests; they do not constitute TSO
 qualification or prove online control feasibility on unseen activation sequences. Actual plant
 and activation observations remain necessary for a company pilot.
+
+## Asset-aware pilot
+
+Known answers check hydraulic integration across level knots, efficiency/loss interpolation,
+quarter-/half-hour cashflows, starts/minimum run/rest time against exhaustive small binary schedules,
+initial obligations, outage infeasibility, turbine/river ramps, delayed downstream water and terminal
+state. A feasible incumbent returned on MILP timeout is rejected. Independent review found and
+regression tests now cover instantaneous export overload despite an acceptable interval average,
+mistyped river-link configuration, off-grid delivery times and misaligned product blocks.
+
+Chronological efficiency fitting uses only completed training intervals and scores later observations;
+perturbing later measured generation cannot alter the fit. Invalid storage cannot be hidden by an off
+unit. Historical evaluation tests exact timestamp coverage, negative prices, signed downward activation,
+imbalance and explicit penalties. Missing observations reduce coverage. Workflow tests check CLI,
+complete handoff, schema/cadence/absolute-boundary matching and artifact tampering.
+
+The [asset benchmark](ASSET_CASE_STUDY.md) publishes approximation and observation failures separately.
+Its metering and asset inputs are synthetic. Neither test coverage nor synthetic parameter recovery
+establishes measured cascade accuracy. The [pilot model](PILOT_MODEL.md) records within-interval,
+boundary, hydraulic and commercial assumptions.

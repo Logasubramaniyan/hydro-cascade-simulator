@@ -33,6 +33,9 @@ flowchart LR
 | `operations/market_data.py`, `forecast.py` | Licence/provenance-aware quarter-hour prices, issue-time filtering, held-out forecast scores |
 | `operations/state.py`, `io.py` | Versioned company cases, physical execution checkpoints and JSON/CSV audit exports |
 | `operations/study.py`, `grid_check.py` | Reproducible offer/stress experiment and optional fixed-schedule native grid assessment |
+| `pilot/assets.py`, `dispatch.py`, `solver.py` | Hydraulic curves, triangulated deterministic MILP, unit commitment and independent hydraulic/peak-export audits |
+| `pilot/calendar.py`, `evaluation.py`, `calibration.py` | DST/product-time screens, explicit metered cashflows, observation thresholds and chronological efficiency fitting |
+| `pilot/workflow.py` | Strict company cases, absolute-time projected/observed handoff provenance, CLI and hash manifests |
 
 ## Why a linear fixed-head baseline?
 
